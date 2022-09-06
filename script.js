@@ -1,5 +1,5 @@
 const InputOne = document.getElementById('inputOne');
-const InputTwo = document.getElementById('inputOne');
+const InputTwo = document.getElementById('inputTwo');
 
 
 const playerOneBtn = document.getElementById('btnOne');
@@ -21,7 +21,6 @@ playerOneBtn.addEventListener('click', createPlayerOne);
 function createPlayerOne(event) {
     event.preventDefault();
     playerOne = player(InputOne.value);
-    console.log(playerOne);
     return playerOne;
 }
 
@@ -77,26 +76,43 @@ function  drawBoard(){
 
 }
 
+var board=[];
+
 function render(){
-    var board=[];
+    
     const grid = document.querySelector('.grid');
+   
     grid.addEventListener("click", function(e){
         const tgt = e.target;
-        if(tgt.childNodes.length === 0){
-            if(board.length % 2 == 0)
-                tgt.textContent = "X";
-            else
-                tgt.textContent = "O"; 
-            
-            board.push(tgt.textContent);
-            console.log(board);
         
+        if (tgt.childNodes.length === 0){
+            if(board.length % 2 == 0){
+                tgt.textContent = "X";
+                board.push(tgt.textContent);
+                changeTurnDiv();
+            }
+            else{
+                tgt.textContent = "O"; 
+                board.push(tgt.textContent);
+                changeTurnDiv();
+            }
         }
-
+        
     })
     
-
 }
+
+
+
+function changeTurnDiv() {
+    const turnDiv = document.querySelector('.turndiv');
+    if (board.length % 2 == 0){
+        turnDiv.textContent = playerOne.name +"'s turn";
+    }
+    else 
+        turnDiv.textContent = playerTwo.name +"'s turn";
+}
+
 
 function gameOver(){
 
