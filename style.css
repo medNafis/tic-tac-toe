@@ -18,19 +18,29 @@ h1{
     font-size: 80px;
 }
 
-form{
+#header{
     text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
 }
 
-input[type=submit]{
+form{
+    text-align: center;
+    margin-top: 100px;
+}
+
+#start{
     margin-top: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+   
 }
 
 .turndiv{
     text-align: center;
+    font-size: 40px;
+    color: pink;
 }
 
 .grid {
@@ -67,10 +77,37 @@ input[type=submit]{
   }
   
   #btn {
+ 
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+  }
+
+  input{
+    background-image: linear-gradient(to right, pink, lightgreen);
+    font-family: pixeboy;
+    font-size: large;
+  }
+
+  input:invalid {
+    border: 2px  red;
+  }
+
+  #btnOne{
+    font-family: pixeboy;
+    font-size: medium;
+  }
+
+  #btnTwo{
+    font-family: pixeboy;
+    font-size:medium;
+  }
+
+  #btn{
+    background-image: linear-gradient(to right, pink, lightgreen);
+    font-family: pixeboy;
+    font-size:medium;
   }

@@ -9,19 +9,20 @@
 </head>
 <body>
     <h1>Tic-Tac-Toe</h1>
+    <div id="header">2 Player Game</div>
     <div class="playerContainer">
-        <form action="/script.js" id="playerform" name="playerform">
+        <form action="/script.js"  id="playerform" name="playerform">
             <label for="player" class="playerOne">Player 1</label>
-            <input type="text" name="inputOne" id="inputOne">
+            <input type="text" name="inputOne" id="inputOne" placeholder="Please enter name" required="required"/>
             <button id="btnOne">Enter</button>
             
             <p>VS</p>
 
             <label for="player" class="playerTwo">Player 2</label>
-            <input type="text" name="inputTwo" id="inputTwo">
-            <button id="btnTwo">Enter</button>
+            <input type="text" name="inputTwo" id="inputTwo" placeholder="Please enter name" required="required"/>
+            <button id="btnTwo" disabled>Enter</button>
 
-            <input type="submit" value="Start" id="start">
+            <input type="submit" value="Start" id="start" disabled>
         </form>
     </div>
     <div id="gameContainer">

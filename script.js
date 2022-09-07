@@ -1,6 +1,7 @@
 const InputOne = document.getElementById('inputOne');
 const InputTwo = document.getElementById('inputTwo');
 
+const header = document.getElementById('header');
 
 const playerOneBtn = document.getElementById('btnOne');
 const playerTwoBtn = document.getElementById('btnTwo');
@@ -22,6 +23,7 @@ function createPlayerOne(event) {
     event.preventDefault();
     playerOne = player(InputOne.value);
     playerOneBtn.remove();
+    playerTwoBtn.removeAttribute("disabled");
     return playerOne;
 }
 
@@ -31,13 +33,17 @@ function createPlayerTwo(event) {
     event.preventDefault();
     playerTwo = player(InputTwo.value);
     playerTwoBtn.remove();
+    startBtn.removeAttribute("disabled");
     return playerTwo;
 }
+    
+
 
 startBtn.addEventListener('click', displayController);
 
 function displayController (event) {
-    event.preventDefault();
+    event.preventDefault();   
+    header.remove();
     form.style.display = 'none';
     drawBoard();
     render();
