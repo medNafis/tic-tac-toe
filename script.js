@@ -1,6 +1,9 @@
 const InputOne = document.getElementById('inputOne');
 const InputTwo = document.getElementById('inputTwo');
 
+const labelOne = document.getElementById('labelOne');
+const labelTwo = document.getElementById('labelTwo');
+
 const header = document.getElementById('header');
 
 const playerOneBtn = document.getElementById('btnOne');
@@ -22,6 +25,10 @@ playerOneBtn.addEventListener('click', createPlayerOne);
 function createPlayerOne(event) {
     event.preventDefault();
     playerOne = player(InputOne.value);
+    InputOne.remove();
+    labelOne.textContent = InputOne.value;
+    labelOne.style.fontSize = "30px";
+    labelOne.style.color = "pink";
     playerOneBtn.remove();
     playerTwoBtn.removeAttribute("disabled");
     return playerOne;
@@ -32,6 +39,10 @@ playerTwoBtn.addEventListener('click', createPlayerTwo);
 function createPlayerTwo(event) {
     event.preventDefault();
     playerTwo = player(InputTwo.value);
+    InputTwo.remove();
+    labelTwo.textContent = InputTwo.value;
+    labelTwo.style.fontSize = "30px";
+    labelTwo.style.color = "pink";
     playerTwoBtn.remove();
     startBtn.removeAttribute("disabled");
     return playerTwo;
@@ -249,7 +260,7 @@ function gameOver(){
         grid.remove();
     }
     if(board.length == 9) {
-        turnDiv.textContent = "Game over, it's a tie";
+        turnDiv.innerHTML = "Game over, it's a tie" + "<br>" + "start again";
         turnDiv.style.fontSize = "48px";
         grid.remove();
     }
