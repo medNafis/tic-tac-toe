@@ -21,6 +21,7 @@ playerOneBtn.addEventListener('click', createPlayerOne);
 function createPlayerOne(event) {
     event.preventDefault();
     playerOne = player(InputOne.value);
+    playerOneBtn.remove();
     return playerOne;
 }
 
@@ -29,6 +30,7 @@ playerTwoBtn.addEventListener('click', createPlayerTwo);
 function createPlayerTwo(event) {
     event.preventDefault();
     playerTwo = player(InputTwo.value);
+    playerTwoBtn.remove();
     return playerTwo;
 }
 
